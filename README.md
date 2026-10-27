@@ -1,68 +1,68 @@
-# LSTM-中英文机器翻译
+# LSTM English–Chinese Machine Translation
 
-​本项目实现了一个基于LSTM的序列到序列（Seq2Seq）架构的神经网络机器翻译系统，能够将英语翻译成中文。项目采用双向LSTM作为编码器，单向LSTM作为解码器，并引入了注意力机制来提升翻译质量。
+A neural machine translation system built on an LSTM sequence-to-sequence (Seq2Seq) architecture. It translates English into Chinese. The encoder is a bidirectional LSTM and the decoder is a single-direction LSTM, with an attention mechanism to improve translation quality.
 
-## 技术特点：
+## Technical Highlights
 
-- **编码器**：双向LSTM（BiLSTM），能够捕获前后文信息
-- **解码器**：单向LSTM，支持注意力机制
-- **注意力机制**：全局注意力机制，帮助解码器关注源序列的不同部分
-- **词嵌入**：可学习的词嵌入层，维度为256
-- **数据处理**：使用jieba进行中文分词，支持词汇表过滤和特殊标记
+- **Encoder**: bidirectional LSTM (BiLSTM), captures context from both directions
+- **Decoder**: single-direction LSTM with attention
+- **Attention**: global attention, lets the decoder focus on different parts of the source sequence
+- **Embeddings**: learnable embedding layer, dimension 256
+- **Data processing**: Chinese tokenization with jieba; vocabulary filtering and special tokens
 
-## 项目结构
+## Project Structure
 
 ```
 LSTM-chinese_english_translation/
-├── DATA_LICENSE.md        # 数据集声明
-├── LICENSE                # 开源协议
-├── LSTM-机器翻译.ipynb     # 主程序代码（Jupyter Notebook）
-├── README.md              # 项目说明文档
-└── data.xls               # 中英平行语料数据集
+├── DATA_LICENSE.md        # dataset license
+├── LICENSE                # project license
+├── LSTM-机器翻译.ipynb     # main notebook
+├── README.md              # this file
+└── data.xls               # English-Chinese parallel corpus
 ```
 
-## 环境依赖
+## Requirements
 
-- 请点击具体jupyter notebook文件`LSTM-机器翻译.ipynb`查看。
+See `LSTM-机器翻译.ipynb` for the exact environment and dependencies.
 
-## 模型参数
+## Model Parameters
 
-| 参数           | 值    |
+| Parameter | Value |
 | -------------- | ----- |
-| 嵌入维度       | 256   |
-| 隐藏层维度     | 512   |
-| LSTM层数       | 2     |
-| Dropout        | 0.3   |
-| 批量大小       | 64    |
-| 最小词频       | 2     |
-| 最大词汇表大小 | 50000 |
+| Embedding dimension | 256 |
+| Hidden dimension | 512 |
+| LSTM layers | 2 |
+| Dropout | 0.3 |
+| Batch size | 64 |
+| Minimum word frequency | 2 |
+| Max vocabulary size | 50000 |
 
-## 使用方法
+## Usage
 
-1. 打开 `LSTM-机器翻译.ipynb` 文件
-2. 按顺序运行各个代码单元格
-3. 模型将自动加载数据、训练并评估
+1. Open `LSTM-机器翻译.ipynb`.
+2. Run the cells in order.
+3. The notebook loads the data, trains the model, and evaluates it.
 
-## 数据集
+## Dataset
 
-使用 `data.xls` 作为训练数据，包含中英平行句对。
+Training data is `data.xls`, containing English-Chinese parallel sentence pairs.
 
-数据集来自：`https://www.kaggle.com/datasets/thespringcomes/translationcmn3`
+Source: `https://www.kaggle.com/datasets/thespringcomes/translationcmn3`
 
-## 训练说明
+## Training Notes
 
-- 支持GPU加速（CUDA）
-- 使用随机种子保证结果可复现
-- 支持模型保存和加载
-- 包含训练过程的可视化
+- GPU acceleration (CUDA) supported
+- Fixed random seed for reproducibility
+- Model save/load supported
+- Training progress is visualized
 
-## 作者信息
+## Author
 
-**谙弆悕博士（Ailan Anjuxi）**
+**Dr. Ailan Anjuxi (谙弆悕)**
 
-- 邮箱：anjuxi.ME@outlook.com
-- SIP电话：sip:anjuxi@sip.linphone.org
+- Email: anjuxi.ME@outlook.com
+- SIP: sip:anjuxi@sip.linphone.org
 
 ---
 
-*本项目仅供学习和研究使用*
+*For learning and research use only.*
